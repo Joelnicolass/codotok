@@ -1,0 +1,18 @@
+import { createContext, useContext } from "react";
+import { FeedPostEntity } from "../../../domain/entities/FeedPost";
+
+interface FeedPostContext {
+  post: FeedPostEntity;
+  Actions: any;
+}
+
+const FeedContext = createContext({} as FeedPostContext);
+export const { Provider } = FeedContext;
+
+export const useFeedContext = () => {
+  const context = useContext(FeedContext);
+  if (context === undefined) {
+    throw new Error("useFeedContext must be used within a FeedContext");
+  }
+  return context;
+};
