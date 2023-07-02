@@ -1,4 +1,3 @@
-import React from "react";
 import { Box } from "../Box/Box";
 import { Avatar, Spacer, Text } from "@nextui-org/react";
 

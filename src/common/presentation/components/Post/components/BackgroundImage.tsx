@@ -3,10 +3,20 @@ import { CSSProperties } from "@nextui-org/react/types/theme";
 type Props = {
   image: string;
   alt: string;
+  foreground?: boolean;
 };
 
-const BackgroundImage = ({ image, alt }: Props) => {
-  return <img style={styles.image} src={image} alt={alt} />;
+const BackgroundImage = ({ image, alt, foreground = false }: Props) => {
+  return (
+    <img
+      style={{
+        ...styles.image,
+        zIndex: foreground ? 9999 : 0,
+      }}
+      src={image}
+      alt={alt}
+    />
+  );
 };
 
 export default BackgroundImage;

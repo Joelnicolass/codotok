@@ -1,9 +1,9 @@
 import { createContext, useContext } from "react";
-import { FeedPostEntity } from "../../../domain/entities/FeedPost";
+import { FeedPost } from "../../../domain/entities/feedPost.entity";
 
 interface FeedPostContext {
-  post: FeedPostEntity;
-  Actions: any;
+  post: FeedPost;
+  actions: any;
 }
 
 const FeedContext = createContext({} as FeedPostContext);

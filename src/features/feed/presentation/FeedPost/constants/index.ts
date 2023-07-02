@@ -1,0 +1,1 @@
+export const NUMBER_BEFORE_LOADING_MORE_POSTS = 2;

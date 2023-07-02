@@ -1,4 +1,4 @@
-export class FeedPostEntity {
+export class FeedPost {
   constructor(
     public id: string,
     public title: string,

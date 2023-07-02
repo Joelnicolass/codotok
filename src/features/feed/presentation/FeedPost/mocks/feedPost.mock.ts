@@ -1,25 +1,6 @@
-import { FeedPostEntity } from "../../../domain/entities/FeedPost";
+import { FeedPost } from "../../../domain/entities/feedPost.entity";
 
-export const generateRandomFeedPosts = (quantity: number): FeedPostEntity[] => {
-  return Array.from({ length: quantity }, (_, index) => {
-    return {
-      id: `${index}`,
-      title: `Las Praderas`,
-      description: `Fotografía de las praderas de la Patagonia Argentina`,
-      authorId: `${index}`,
-      image: `https://picsum.photos/600/1000/?random=${Math.floor(
-        Math.random() * 20
-      )}`,
-      authorName: `Sartori Joel Nicolas`,
-      authorAvatar: `https://i.pravatar.cc/150?img=${Math.floor(
-        Math.random() * 30
-      )}`,
-      createdAt: new Date(),
-    };
-  });
-};
-
-export const MOCK_FEED_POST: FeedPostEntity[] = [
+export const MOCK_FEED_POST: FeedPost[] = [
   {
     id: "1",
     title: "Las Praderas",
