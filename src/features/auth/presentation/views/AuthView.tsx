@@ -73,7 +73,7 @@ const AuthView = () => {
         </Card.Footer>
       </Card>
       <Text>
-        Version: <b>{import.meta.env.VITE_APP_VERSION}</b>
+        <b>{import.meta.env.VITE_APP_VERSION}</b>
       </Text>
     </div>
   );
