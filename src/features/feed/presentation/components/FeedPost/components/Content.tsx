@@ -1,8 +1,8 @@
 import { Card, Spacer } from "@nextui-org/react";
-import { Box } from "../../../../../common/presentation/components/Box/Box";
+import { Box } from "../../../../../../common/presentation/components/Box/Box";
 import { FaArrowAltCircleUp } from "react-icons/fa";
-import AvatarWithName from "../../../../../common/presentation/components/AvatarWithName/AvatarWithName";
-import useHover from "../../../../../common/presentation/hooks/useHover";
+import AvatarWithName from "../../../../../../common/presentation/components/AvatarWithName/AvatarWithName";
+import useHover from "../../../../../../common/presentation/hooks/useHover";
 import { useFeedContext } from "../providers/FeedProvider";
 import TitleAndDescription from "./TitleAndDescription";
 import SwipeUp from "../animations/SwipeUp";

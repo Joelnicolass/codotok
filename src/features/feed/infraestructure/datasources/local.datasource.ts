@@ -1,4 +1,4 @@
-import { getRandomUsers } from "../../../../common/infraestructure/services/getRandomUser.service";
+import { getRandomUsers } from "../../../../common/infraestructure/services/randomUser/getRandomUser.service";
 import { FeedPost } from "../../domain/entities/feedPost.entity";
 import { FeedDataSource } from "../../domain/repositories/feed.repository";
 

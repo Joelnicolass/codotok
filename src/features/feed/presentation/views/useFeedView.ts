@@ -3,7 +3,7 @@ import { feedUseCases } from "../../infraestructure/di/usecases.di";
 import { useEffect, useState } from "react";
 import { FeedPost } from "../../domain/entities/feedPost.entity";
 import { useInView } from "react-intersection-observer";
-import { NUMBER_BEFORE_LOADING_MORE_POSTS } from "../FeedPost/constants";
+import { NUMBER_BEFORE_LOADING_MORE_POSTS } from "../components/FeedPost/constants";
 
 const useFeedView = () => {
   const [posts, setPosts] = useState<FeedPost[]>([]);

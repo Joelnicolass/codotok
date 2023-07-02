@@ -1,4 +1,4 @@
-import { FeedPost } from "../../../domain/entities/feedPost.entity";
+import { FeedPost } from "../../domain/entities/feedPost.entity";
 
 export const MOCK_FEED_POST: FeedPost[] = [
   {

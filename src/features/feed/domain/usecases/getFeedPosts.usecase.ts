@@ -2,7 +2,7 @@ import { FeedPost } from "../entities/feedPost.entity";
 import { FeedRepository } from "../repositories/feed.repository";
 
 export class GetFeedPostsUseCase {
-  public readonly repository: FeedRepository;
+  private readonly repository: FeedRepository;
 
   constructor(repository: FeedRepository) {
     this.repository = repository;

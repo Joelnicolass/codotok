@@ -19,6 +19,18 @@ const appRouter = createBrowserRouter([
       };
     },
   },
+  {
+    path: "/auth",
+    async lazy() {
+      const { default: AuthView } = await import(
+        "../../../features/auth/presentation/views/AuthView.tsx"
+      );
+
+      return {
+        Component: AuthView,
+      };
+    },
+  },
 ]);
 
 export default appRouter;

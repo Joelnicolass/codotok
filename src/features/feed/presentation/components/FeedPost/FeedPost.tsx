@@ -1,12 +1,12 @@
 import React from "react";
-import Post from "../../../../common/presentation/components/Post/Post";
+import Post from "../../../../../common/presentation/components/Post/Post";
 import { Spacer } from "@nextui-org/react";
 import Content from "./components/Content";
-import { FeedPost } from "../../domain/entities/feedPost.entity";
+import { FeedPost } from "../../../domain/entities/feedPost.entity";
 import { Provider } from "./providers/FeedProvider";
-import { useAppSelector } from "../../../../common/presentation/hooks/useRedux";
+import { useAppSelector } from "../../../../../common/presentation/hooks/useRedux";
 import { motion } from "framer-motion";
-import Hide from "../../../../common/presentation/animations/Fade";
+import Hide from "../../../../../common/presentation/animations/Fade";
 
 type Props = {
   post: FeedPost;

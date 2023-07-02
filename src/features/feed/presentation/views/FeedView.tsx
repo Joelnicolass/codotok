@@ -1,5 +1,5 @@
 import VerticalSlider from "../../../../common/presentation/components/VerticalSlider/VerticalSlider";
-import FeedPostComponent from "../FeedPost/FeedPost";
+import FeedPostComponent from "../components/FeedPost/FeedPost";
 import Actions from "../../../../common/presentation/components/Actions/Actions";
 import useFeedView from "./useFeedView";
 import { FaCoffee, FaHeart } from "react-icons/fa";
@@ -11,7 +11,7 @@ const FeedView = () => {
   return (
     <VerticalSlider>
       {posts?.map((post, i) => (
-        <div key={post.id} ref={saveRef(i) ? ref : null}>
+        <article key={post.id} ref={saveRef(i) ? ref : null}>
           <FeedPostComponent
             post={post}
             actions={
@@ -26,7 +26,7 @@ const FeedView = () => {
               </Actions>
             }
           />
-        </div>
+        </article>
       ))}
     </VerticalSlider>
   );
