@@ -4,6 +4,8 @@ import { Button, Card, Image, Input, Spacer, Text } from "@nextui-org/react";
 import Logo from "../../../../common/presentation/components/Logo/Logo";
 
 const AuthView = () => {
+  console.log(import.meta.env.VITE_APP_VERSION);
+
   return (
     <div
       style={{
