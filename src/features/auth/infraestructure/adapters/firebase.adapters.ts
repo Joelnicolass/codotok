@@ -1,5 +1,5 @@
 import { UserCredential } from "firebase/auth";
-import { User } from "../../domain/entities/User.entity";
+import { User } from "../../../../common/domain/entities/User.entity";
 
 export const userAdapter = (firebaseResponse: UserCredential): User => {
   return {

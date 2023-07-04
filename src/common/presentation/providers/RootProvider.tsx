@@ -2,6 +2,7 @@ import { NextUIProvider } from "@nextui-org/react";
 import { darkTheme } from "../themes/dark.theme";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+import AuthProvider from "./AuthProvider";
 
 type Props = {
   children: React.ReactNode | React.ReactNode[];
@@ -10,7 +11,9 @@ type Props = {
 const RootProvider = ({ children }: Props) => {
   return (
     <Provider store={store}>
-      <NextUIProvider theme={darkTheme}>{children}</NextUIProvider>
+      <AuthProvider>
+        <NextUIProvider theme={darkTheme}>{children}</NextUIProvider>
+      </AuthProvider>
     </Provider>
   );
 };

@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import { Box } from "../Box/Box";
 import { Avatar, Spacer, Text } from "@nextui-org/react";
 
@@ -6,7 +7,7 @@ type Props = {
   name?: string;
 };
 
-const AvatarWithName = ({ image, name }: Props) => {
+const AvatarWithName = forwardRef(({ image, name }: Props, ref) => {
   const initials = name
     ?.split(" ")
     .map((n) => n[0])
@@ -24,6 +25,6 @@ const AvatarWithName = ({ image, name }: Props) => {
       <Text h5>{name}</Text>
     </Box>
   );
-};
+});
 
 export default AvatarWithName;

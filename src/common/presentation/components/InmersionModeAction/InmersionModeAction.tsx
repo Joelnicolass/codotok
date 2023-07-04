@@ -2,7 +2,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks/useRedux";
 import {
   offInmersion,
   onInmersion,
-} from "../../providers/redux/slices/modes.slice";
+} from "../../providers/redux/slices/modes/modes.slice";
 import Actions from "../Actions/Actions";
 import { FaEye } from "react-icons/fa";
 

@@ -1,7 +1,7 @@
 import VerticalSlider from "../../../../common/presentation/components/VerticalSlider/VerticalSlider";
 import FeedPostComponent from "../components/FeedPost/FeedPost";
 import Actions from "../../../../common/presentation/components/Actions/Actions";
-import useFeedView from "./useFeedView";
+import useFeedView from "../hooks/useFeedView";
 import { FaCoffee, FaHeart } from "react-icons/fa";
 import { Spacer } from "@nextui-org/react";
 

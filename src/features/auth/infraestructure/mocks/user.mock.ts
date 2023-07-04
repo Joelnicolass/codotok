@@ -1,4 +1,4 @@
-import { User } from "../../domain/entities/User.entity";
+import { User } from "../../../../common/domain/entities/User.entity";
 
 export const MOCK_USER: User = {
   id: window.crypto.randomUUID(),

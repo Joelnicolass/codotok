@@ -1,6 +1,6 @@
 import React from "react";
-import AvatarWithName from "../AvatarWithName/AvatarWithName";
-import Nav from "../Nav/Nav";
+import AvatarWithName from "../../AvatarWithName/AvatarWithName";
+import Nav from "../../Nav/Nav";
 
 type Props = {
   children: React.ReactNode | React.ReactNode[];

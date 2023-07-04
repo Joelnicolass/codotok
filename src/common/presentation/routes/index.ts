@@ -4,8 +4,12 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     async lazy() {
+      const { default: PrivateRoute } = await import(
+        "../../../features/auth/presentation/components/PrivateRoutes/PrivateRoute.tsx"
+      );
+
       const { default: LoggedLayout } = await import(
-        "../components/Layouts/LoggedLayout.tsx"
+        "../components/IconButton/Layouts/LoggedLayout.tsx"
       );
       const { default: FeedView } = await import(
         "../../../features/feed/presentation/views/FeedView.tsx"
@@ -13,8 +17,10 @@ const appRouter = createBrowserRouter([
 
       return {
         Component: () =>
-          LoggedLayout({
-            children: FeedView(),
+          PrivateRoute({
+            children: LoggedLayout({
+              children: FeedView(),
+            }),
           }),
       };
     },
@@ -22,12 +28,16 @@ const appRouter = createBrowserRouter([
   {
     path: "/auth",
     async lazy() {
+      const { default: PublicRoute } = await import(
+        "../../../features/auth/presentation/components/PublicRoutes/PublicRoute.tsx"
+      );
+
       const { default: AuthView } = await import(
         "../../../features/auth/presentation/views/AuthView.tsx"
       );
 
       return {
-        Component: AuthView,
+        Component: () => PublicRoute({ children: AuthView() }),
       };
     },
   },
