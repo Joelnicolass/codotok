@@ -10,7 +10,7 @@ const LoggedLayout = ({ children }: Props) => {
   return (
     <div>
       <Nav />
-      {children}
+      <>{children}</>
     </div>
   );
 };

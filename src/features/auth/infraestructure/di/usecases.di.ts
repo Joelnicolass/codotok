@@ -1,4 +1,5 @@
 import { LoginUseCase } from "../../domain/usecases/login.usecase";
+import { LoginWithGoogleUseCase } from "../../domain/usecases/loginGoogle.usecase";
 import { LogoutUseCase } from "../../domain/usecases/logout.usecase";
 import { RegisterUseCase } from "../../domain/usecases/register.usecase";
 import { FirebaseDataSource } from "../datasources/firebase.datasource";
@@ -13,6 +14,8 @@ class AuthUseCases {
   public readonly logout = new LogoutUseCase(this.repository);
 
   public readonly register = new RegisterUseCase(this.repository);
+
+  public readonly loginWithGoogle = new LoginWithGoogleUseCase(this.repository);
 }
 
 export const authUseCases = new AuthUseCases();

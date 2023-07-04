@@ -4,10 +4,12 @@ export interface AuthRepository {
   login(email: string, password: string): Promise<Auth>;
   logout(): Promise<void>;
   register(email: string, password: string): Promise<Auth>;
+  LoginWithGoogle(): Promise<Auth>;
 }
 
 export interface AuthDataSource {
   login(email: string, password: string): Promise<Auth>;
   logout(): Promise<void>;
   register(email: string, password: string): Promise<Auth>;
+  LoginWithGoogle(): Promise<Auth>;
 }

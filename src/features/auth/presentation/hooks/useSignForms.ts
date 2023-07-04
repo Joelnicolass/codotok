@@ -24,6 +24,8 @@ const useSignForms = () => {
     error: errorLogin,
     isMutating: loadingRegister,
   } = useSWR("loginWithEmailAndPassword", async () => {
+    if (!form.email || !form.password) throw new Error("Campos vacios");
+
     const response = await authUseCases.login.execute(
       form.email,
       form.password
@@ -48,6 +50,8 @@ const useSignForms = () => {
     error: errorRegister,
     isMutating: loadingLogin,
   } = useSWR("registerWithEmailAndPassword", async () => {
+    if (!form.email || !form.password) throw new Error("Campos vacios");
+
     const response = await authUseCases.register.execute(
       form.email,
       form.password

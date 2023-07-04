@@ -5,11 +5,26 @@ import { AuthDataSource } from "../../domain/repositories/auth.repository";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
 } from "firebase/auth";
 import { userAdapter } from "../adapters/firebase.adapters";
 import { Auth } from "../../domain/entities/Auth.entity";
 
 export class FirebaseDataSource implements AuthDataSource {
+  async LoginWithGoogle(): Promise<Auth> {
+    const provider = new GoogleAuthProvider();
+    const response = await signInWithPopup(auth, provider);
+
+    const user = userAdapter(response);
+    const token = (await response.user?.getIdToken()) || null;
+
+    return {
+      token,
+      user,
+    };
+  }
+
   async login(email: string, password: string): Promise<Auth> {
     const response = await signInWithEmailAndPassword(auth, email, password);
 

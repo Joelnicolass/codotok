@@ -1,10 +1,10 @@
 import { Auth } from "../entities/Auth.entity";
 import { AuthRepository } from "../repositories/auth.repository";
 
-export class LoginUseCase {
+export class LoginWithGoogleUseCase {
   constructor(private readonly authRepository: AuthRepository) {}
 
-  async execute(email: string, password: string): Promise<Auth> {
-    return await this.authRepository.login(email, password);
+  async execute(): Promise<Auth> {
+    return this.authRepository.LoginWithGoogle();
   }
 }

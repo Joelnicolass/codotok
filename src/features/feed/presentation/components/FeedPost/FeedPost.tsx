@@ -7,6 +7,7 @@ import { Provider } from "./providers/FeedProvider";
 import { useAppSelector } from "../../../../../common/presentation/hooks/useRedux";
 import { motion } from "framer-motion";
 import Hide from "../../../../../common/presentation/animations/Fade";
+import InmersionModeAction from "../../../../../common/presentation/components/InmersionModeAction/InmersionModeAction";
 
 type Props = {
   post: FeedPost;

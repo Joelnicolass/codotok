@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { User } from "../../../../../domain/entities/User.entity";
-import { getAuth, login, logout } from "./auth.thunks";
+import { getAuth, login, loginGoogle, logout } from "./auth.thunks";
 
 interface AuthState {
   token: string | null;
@@ -27,6 +27,10 @@ export const authSlice = createSlice({
         state.user = null;
       })
       .addCase(getAuth.fulfilled, (state, action) => {
+        state.token = action.payload.token;
+        state.user = action.payload.user;
+      })
+      .addCase(loginGoogle.fulfilled, (state, action) => {
         state.token = action.payload.token;
         state.user = action.payload.user;
       });

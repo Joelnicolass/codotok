@@ -8,6 +8,10 @@ import {
 export class AuthRespositoryImpl implements AuthRepository {
   constructor(private readonly datasource: AuthDataSource) {}
 
+  LoginWithGoogle(): Promise<Auth> {
+    return this.datasource.LoginWithGoogle();
+  }
+
   login(email: string, password: string): Promise<Auth> {
     return this.datasource.login(email, password);
   }

@@ -41,6 +41,31 @@ const appRouter = createBrowserRouter([
       };
     },
   },
+  {
+    path: "/profile",
+    async lazy() {
+      const { default: PrivateRoute } = await import(
+        "../../../features/auth/presentation/components/PrivateRoutes/PrivateRoute.tsx"
+      );
+
+      const { default: LoggedLayout } = await import(
+        "../components/IconButton/Layouts/LoggedLayout.tsx"
+      );
+
+      const { default: ProfileView } = await import(
+        "../../../features/profile/presentation/views/ProfileView.tsx"
+      );
+
+      return {
+        Component: () =>
+          PrivateRoute({
+            children: LoggedLayout({
+              children: ProfileView(),
+            }),
+          }),
+      };
+    },
+  },
 ]);
 
 export default appRouter;

@@ -40,3 +40,16 @@ export const logout = createAsyncThunk("auth/logout", async () => {
     return error;
   }
 });
+
+export const loginGoogle = createAsyncThunk(
+  "auth/loginGoogle",
+  async (data: { token: string; user: User }, thunkAPI) => {
+    try {
+      localStorage.setItem(keyAuth, JSON.stringify(data));
+
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);

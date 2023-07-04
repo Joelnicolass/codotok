@@ -23,6 +23,7 @@ const useFeedView = () => {
       revalidateIfStale: false,
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
+      revalidateOnMount: true,
     }
   );
 
