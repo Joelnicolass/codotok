@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../hooks/useRedux";
+import { useAppDispatch } from "../hooks/useRedux";
 import { getAuth } from "./redux/slices/auth/auth.thunks";
 
 type Props = {

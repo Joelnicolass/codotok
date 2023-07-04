@@ -64,6 +64,9 @@ const styles: Record<string, React.CSSProperties | CSS> = {
     alignItems: "center",
   },
   animContainer: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     width: "100%",
   },
 };
