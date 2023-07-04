@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { User } from "../../../../../domain/entities/User.entity";
+import { isExpired } from "react-jwt";
 
 export const keyAuth = "nIhNcCAuKL12Aj";
 
@@ -7,14 +8,25 @@ export const getAuth = createAsyncThunk("auth/getAuth", async () => {
   try {
     const auth = localStorage.getItem(keyAuth);
 
-    if (auth) {
-      return JSON.parse(auth);
+    if (!auth) {
+      return {
+        token: null,
+        user: null,
+      };
     }
 
-    return {
-      token: null,
-      user: null,
-    };
+    const state = JSON.parse(auth);
+
+    if (isExpired(state.token)) {
+      localStorage.removeItem(keyAuth);
+
+      return {
+        token: null,
+        user: null,
+      };
+    }
+
+    return state;
   } catch (error) {
     return error;
   }

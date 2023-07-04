@@ -1,13 +1,20 @@
 import React, { useRef } from "react";
-import AvatarWithName from "../AvatarWithName/AvatarWithName";
 
 import { useAppDispatch, useAppSelector } from "../../hooks/useRedux";
 import Hide from "../../animations/Fade";
 import InmersionModeAction from "../InmersionModeAction/InmersionModeAction";
-import { Dropdown, Text, Grid, Avatar, User, Spacer } from "@nextui-org/react";
-import { FaUser } from "react-icons/fa";
+import { Dropdown, Text, User, Spacer, Button } from "@nextui-org/react";
+import {
+  Fa500Px,
+  FaAccusoft,
+  FaOutdent,
+  FaSadCry,
+  FaSignOutAlt,
+  FaUser,
+} from "react-icons/fa";
 import { logout } from "../../providers/redux/slices/auth/auth.thunks";
 import { useNavigate } from "react-router-dom";
+import { getInitials } from "../../../utils/string.utils";
 
 const Nav = () => {
   const inmersionMode = useAppSelector((state) => state.modes.inmersion);
@@ -30,45 +37,45 @@ const Nav = () => {
               name={user?.name || "Invitado"}
               description={user?.email || ""}
               src={user?.avatar || ""}
-              text={user?.name
-                ?.split(" ")
-                .map((n) => n[0].toUpperCase())
-                .join("")}
+              text={getInitials(user?.name || "") || ""}
             />
           </Dropdown.Trigger>
-          <Dropdown.Menu
-            aria-label="Avatar Actions"
-            css={{
-              bgBlur: "10px",
-              backdropFilter: "blur(10px)",
-              boxShadow: "0 0 10px rgba(0, 0, 0, 0)",
-              background: "rgba(255, 255, 255, 0)",
-            }}
-          >
-            <Dropdown.Item
-              key="profile"
-              css={{ height: "$18" }}
-              textValue="profile"
-              icon={<FaUser />}
-            >
-              <Text
-                b
-                color="inherit"
-                css={{ d: "flex" }}
-                onClick={() => navigate("/profile")}
+          <Dropdown.Menu aria-label="Avatar Actions">
+            <Dropdown.Item>
+              <Button
+                css={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "flex-start",
+                  width: "100%",
+                  background: "transparent",
+                }}
+                onClick={() => {
+                  navigate("/profile");
+                }}
               >
-                Ir al Perfil
-              </Text>
+                <FaUser />
+                <Spacer inline x={0.5} />
+                <Text>Perfil</Text>
+              </Button>
             </Dropdown.Item>
-            <Dropdown.Item
-              key="logout"
-              color="default"
-              withDivider
-              textValue="logout"
-            >
-              <Text b onClick={() => dispatch(logout())}>
-                Cerrar Sesión
-              </Text>
+            <Dropdown.Item withDivider>
+              <Button
+                css={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "flex-start",
+                  width: "100%",
+                  background: "transparent",
+                }}
+                onClick={() => {
+                  dispatch(logout());
+                }}
+              >
+                <FaSignOutAlt />
+                <Spacer inline x={0.5} />
+                <Text>Cerrar sesión</Text>
+              </Button>
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>

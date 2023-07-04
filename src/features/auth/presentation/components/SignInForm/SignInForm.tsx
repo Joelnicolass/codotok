@@ -5,7 +5,7 @@ const SignInForm = () => {
   const { form, handleChange, loginActions } = useSignForms();
 
   return (
-    <form style={styles.form}>
+    <form style={styles.form} onSubmit={loginActions.handleSubmit}>
       <Input
         name="email"
         type="email"
@@ -26,10 +26,7 @@ const SignInForm = () => {
         disabled={loginActions.loadingLogin}
       />
       <Spacer y={0.5} />
-      <Button
-        onPress={loginActions.triggerLogin}
-        disabled={loginActions.loadingLogin}
-      >
+      <Button type="submit" disabled={loginActions.loadingLogin}>
         <Text>Iniciar sesión</Text>
       </Button>
     </form>

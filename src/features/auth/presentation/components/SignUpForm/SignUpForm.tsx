@@ -5,7 +5,7 @@ const SignUpForm = () => {
   const { form, handleChange, registerActions } = useSignForms();
 
   return (
-    <form style={styles.form}>
+    <form style={styles.form} onSubmit={registerActions.handleRegister}>
       <Input
         name="email"
         type="email"
@@ -26,10 +26,7 @@ const SignUpForm = () => {
         disabled={registerActions.loadingRegister}
       />
       <Spacer y={0.5} />
-      <Button
-        onPress={registerActions.triggerRegister}
-        disabled={registerActions.loadingRegister}
-      >
+      <Button type="submit" disabled={registerActions.loadingRegister}>
         <Text>Registrarse!</Text>
       </Button>
     </form>

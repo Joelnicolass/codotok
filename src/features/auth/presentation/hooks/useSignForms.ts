@@ -76,15 +76,31 @@ const useSignForms = () => {
     });
   };
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!form.email || !form.password) return;
+
+    triggerLogin();
+  };
+
+  const handleRegister = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!form.email || !form.password) return;
+
+    triggerRegister();
+  };
+
   const loginActions = {
-    triggerLogin,
+    handleSubmit,
     userLogged,
     loadingLogin,
     errorLogin,
   };
 
   const registerActions = {
-    triggerRegister,
+    handleRegister,
     userRegistered,
     loadingRegister,
     errorRegister,

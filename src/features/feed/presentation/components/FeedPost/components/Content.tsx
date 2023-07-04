@@ -1,12 +1,12 @@
-import { Card, Spacer } from "@nextui-org/react";
+import { Card, Spacer, User } from "@nextui-org/react";
 import { Box } from "../../../../../../common/presentation/components/Box/Box";
 import { FaArrowAltCircleUp } from "react-icons/fa";
-import AvatarWithName from "../../../../../../common/presentation/components/AvatarWithName/AvatarWithName";
 import useHover from "../../../../../../common/presentation/hooks/useHover";
 import { useFeedContext } from "../providers/FeedProvider";
 import TitleAndDescription from "./TitleAndDescription";
 import SwipeUp from "../animations/SwipeUp";
 import { CSS, CSSProperties } from "@nextui-org/react/types/theme";
+import { getInitials } from "../../../../../../common/utils/string.utils";
 
 const Content = () => {
   const { post, actions } = useFeedContext();
@@ -25,7 +25,17 @@ const Content = () => {
             <Box css={styles.titleAndNameWrapper}>
               <FaArrowAltCircleUp />
             </Box>
-            <AvatarWithName image={post.authorAvatar} name={post.authorName} />
+
+            <User
+              bordered
+              as="button"
+              size="lg"
+              color="gradient"
+              name={post.authorName || "Invitado"}
+              src={post.authorAvatar || ""}
+              text={getInitials(post.authorName) || ""}
+            />
+
             <Spacer y={1.5} />
             <TitleAndDescription />
           </Box>
