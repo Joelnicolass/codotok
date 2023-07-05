@@ -59,9 +59,7 @@ const appRouter = createBrowserRouter([
       return {
         Component: () =>
           PrivateRoute({
-            children: LoggedLayout({
-              children: ProfileView(),
-            }),
+            children: ProfileView(),
           }),
       };
     },

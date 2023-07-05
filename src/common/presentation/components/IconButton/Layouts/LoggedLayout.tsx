@@ -1,5 +1,4 @@
 import React from "react";
-import AvatarWithName from "../../AvatarWithName/AvatarWithName";
 import Nav from "../../Nav/Nav";
 
 type Props = {

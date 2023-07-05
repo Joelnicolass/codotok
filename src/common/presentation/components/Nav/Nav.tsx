@@ -1,17 +1,9 @@
-import React, { useRef } from "react";
+import React from "react";
 
 import { useAppDispatch, useAppSelector } from "../../hooks/useRedux";
 import Hide from "../../animations/Fade";
-import InmersionModeAction from "../InmersionModeAction/InmersionModeAction";
 import { Dropdown, Text, User, Spacer, Button } from "@nextui-org/react";
-import {
-  Fa500Px,
-  FaAccusoft,
-  FaOutdent,
-  FaSadCry,
-  FaSignOutAlt,
-  FaUser,
-} from "react-icons/fa";
+import { FaSignOutAlt, FaUser } from "react-icons/fa";
 import { logout } from "../../providers/redux/slices/auth/auth.thunks";
 import { useNavigate } from "react-router-dom";
 import { getInitials } from "../../../utils/string.utils";
